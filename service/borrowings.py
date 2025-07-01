@@ -42,3 +42,9 @@ def get_borrower_books(borrower) :
         book_list.append(title)
     title_dict["books"] = book_list
     return title_dict
+
+def return_borrower_books(borrower) :
+    if borrower :
+        return cache.return_borrower_books(borrower)
+    else :
+        return None

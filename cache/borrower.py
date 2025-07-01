@@ -11,3 +11,8 @@ def get_borrower_books(borrower) :
     cache_key = "borrower:" + borrower + ":books"
     value = redis_client.get(cache_key)
     return json.loads(value)
+
+def return_borrower_books(borrower) :
+    cache_key = "borrower:" + borrower + ":books"
+    redis_client.delete(cache_key)
+    return True
